@@ -14,7 +14,7 @@ def AllBooks(dir):
   tmp = []
 
   for File in Dic:
-    df = pd.read_csv(File)
+    df = pd.read_csv(File, encoding='cp932')
     tmp.append(df)
 
 
