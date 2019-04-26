@@ -14,7 +14,7 @@ def AllBooks(dir):
   tmp = []
 
   for File in Dic:
-    df = pd.read_csv(File, encoding='cp932')
+    df = pd.read_csv(File)
     tmp.append(df)
 
 
@@ -24,7 +24,7 @@ def AllBooks(dir):
   #csvファイルの連結
   result = tmp[0]
   for i in range(1, DataSize):
-    pd.concat([ result, tmp[i]])
+    result = pd.concat([ result, tmp[i]])
   
   result = result.rename(columns={
                   "#コメントID":"comment_id", 
