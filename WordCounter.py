@@ -1,18 +1,19 @@
 class WordCounter():
-    #{"word", num}
-    counts_ = {}
+    def __init__(self):
+        #{"word", num}
+        self.counts_ = {}
 
-    def addNumOfWord(this,word, num):
-        if(word in this.counts_):
-            this.counts_[word] += num
+    def addNumOfWord(self,word, num):
+        if(word in self.counts_):
+            self.counts_[word] += num
         else:
-            this.counts_[word] = num
+            self.counts_[word] = num
 
-    def getRanking(this):
-        return sorted(this.counts_.items(), key=lambda x:x[1], reverse=True)
+    def getRanking(self):
+        return sorted(self.counts_.items(), key=lambda x:x[1], reverse=True)
 
-    def printAll(this):
-        print(this.counts_)
+    def printAll(self):
+        print(self.counts_)
 
 if __name__ == "__main__":
     hoge = WordCounter()

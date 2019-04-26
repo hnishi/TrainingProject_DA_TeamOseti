@@ -10,10 +10,12 @@ m_neologd = MeCab.Tagger ("-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd/ -Oc
 
 
 def getWordList(str):
+    word_list = []
+    if not str == str :
+        return word_list
     #TODO 名詞や形容詞や感動詞だけで絞り込む
     #ぽやしみ	ポヤシミ	おやすみ	名詞-固有名詞-一般
     mecab_return = m_neologd.parse(str).split('\n')
-    word_list = []
 
     for row in mecab_return:
         values = row.split("\t")

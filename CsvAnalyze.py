@@ -24,8 +24,8 @@ def AllBooks(dir):
   #csvファイルの連結
   result = tmp[0]
   for i in range(1, DataSize):
-    pd.concat([ result, tmp[i]])
-  
+    result = pd.concat([ result, tmp[i]])
+
   result = result.rename(columns={
                   "#コメントID":"comment_id", 
                   "状態 ('未承認：unapproved、承認済み：approved、ゴミ箱：trash、投稿者にのみ表示：show_only_owner'のいずれか)":"status", 
@@ -70,7 +70,12 @@ def CsvExtraction(panda, ExtAray):
   return CsvSort( panda[ExtAray], ExtAray[0], True)
 
 
-def OutCommnet(df, title):
-  df = df[df["opus"] == title]
+'''
+タイトルに対するコメントを返すもの
+df, panda型のデータ
+opus, 作品名
+'''
+def OutCommnet(df, opus):
+  df = df[df["opus"] == opus]
 
   return df["comments"]
