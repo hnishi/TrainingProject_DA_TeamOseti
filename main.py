@@ -37,6 +37,7 @@ def sumOfWords(title):
     return count.counts_ 
 
 
+"""
 mytitles = [
 "HUNTER×HUNTER",
 "テニスの王子様",
@@ -50,6 +51,12 @@ mytitles = [
 "DEATH NOTE",
 "食戟のソーマ",
 "NARUTO―ナルト―" ]
+"""
+
+mytitles = [
+"遊☆戯☆王",
+"ドラゴンボール超"
+]
 
 for i_title in mytitles :
   print(i_title)
@@ -60,12 +67,4 @@ for i_title in mytitles :
   hoge = wc.makeWordCloud()
   name = "out_wordcloud/" + i_title + ".png" 
   hoge.genPng( mydict , name_png = name )
-
-quit()
-#print(sumOfWords("黒子のバスケ Replace PLUS"))
-mydict = sumOfWords("黒子のバスケ Replace PLUS") 
-hoge = wc.makeWordCloud() 
-hoge.genPng( mydict , name_png = "out_wordcloud.png" )
-
-
 
